@@ -1,6 +1,4 @@
 /*-------------------------------------------------
-
-- Reset /Normalizar
 - Import fonts
 - Global
 - Variables
@@ -19,7 +17,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poetsen+One&display=swap');
 
-/* Global */
+
+/* Reset /Normalizar */
+
 
 html{
     box-sizing: border-box;
@@ -28,6 +28,8 @@ html{
 *,*::after,*::before{
     box-sizing: inherit;
 }
+
+/* Global */
 
 body{
     background-color: var(--color-body);
@@ -116,7 +118,7 @@ img{
  */
 
 .header{
-    background-image: url(../img/fondo.jpg);
+    background-image: url(../img/fondo.png);
     background-repeat: no-repeat;
     background-size: auto;
     background-attachment: fixed;
@@ -151,8 +153,13 @@ img{
 }
 
 .header__h1{
-    visibility: hidden;
     font-size: var(--h-1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    color: var(--color-body);
+    margin-right: 15rem;
 }
 
 .header__btn{
@@ -972,9 +979,11 @@ input::placeholder{
     }
 
     .header__h1{
-        visibility: visible;
-        font-size: var(--h-1);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
         color: var(--color-logo-1);
+        margin-right: 0;
     }
 
     .header__btn{
@@ -984,6 +993,10 @@ input::placeholder{
     .header__ul{
         right: 0;
     } 
+
+    .header__figure--img{
+        width: 80%;
+    }
 
 
     /*----- SECCION INTERES -----*/
@@ -1118,12 +1131,17 @@ input::placeholder{
 */
 @media (min-width: 600px) and (max-width: 768px) {
 
+
     /*----- ENCABEZADO -----*/
 
-    .header__btn{
-        box-shadow: inset 0 0 205.8vmax rgba(54, 42, 40, 0.5);
-        border-radius: 1rem;
+    .header__h1{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: var(--color-logo-1);
+        margin-right: 2rem;
     }
+
 
     /*----- SECCION INTERES -----*/
 
