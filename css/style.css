@@ -1,0 +1,1254 @@
+/*-------------------------------------------------
+
+- Reset /Normalizar
+- Import fonts
+- Global
+- Variables
+- Header
+- Section Interest
+- Section Products
+- Section Tablet
+- Section Contact
+- Section Where
+- Footer
+- Media queries
+
+-------------------------------------------------*/
+
+/* Import fonts Nunito Sans & Poetsen One */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poetsen+One&display=swap');
+
+/* Global */
+
+html{
+    box-sizing: border-box;
+}
+
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+
+body{
+    background-color: var(--color-body);
+}
+
+/* Tipografias - las clases de las tipografias con los estilo usados */
+
+.poetsen-one-regular {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.poetsen-one-bold{
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nunito-thin-italic {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.nunito-light {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.nunito-normal {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nunito-extrabold {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+img{
+    width: 100%;
+}
+
+/* Variables */
+
+:root {
+
+    /* Tamaños de las fuentes con clamp */
+    --h-1: clamp(2rem, 0.571rem + 3.81vw, 4rem); /* Tamaño para los h1 generales */
+    --h-2: clamp(1.2rem, 0.271rem + 2.476vw, 2.5rem);  /* Tamaño para los h2 generales */
+    --h-3: clamp(3rem, 2.286rem + 1.905vw, 4rem);  /* Tamaño para los h3 generales */
+    --paragraph-1: clamp(1rem, 0.643rem + 0.952vw, 1.5rem); /* Tamaño para los parrafos generales y las listas */
+    --nav-footer: clamp(0.8rem, 0.3rem + 1.333vw, 1.5rem); /* Tamaño para el navegador del footer */
+    --p-footer: clamp(0.8rem, 0.657rem + 0.381vw, 1rem); /* Tamaño para el parrafo del footer */
+    --scale-p: clamp(5rem, 3.571rem + 3.81vw, 7rem); /* Tamaño escalar el texto de las transiciones */
+    --left-tablet: clamp(3rem, -0.571rem + 9.524vw, 8rem);
+
+    /* Colores */
+    --color-body: #fdfff7; /*Color de fondo de el body*/
+    --color-section-1: #fdc739; /*Color de fondo de la primera section*/
+    --color-section-2: #f0841a; /*Color de fondo de la segunda section*/
+    --color-section-3: #a05237; /*Color de fondo de la tercera section*/
+    --color-logo-1: #746359; /*Color de logo 1*/
+    --color-logo-2: #362a28; /*Color de logo 2 y de los textos*/
+  }
+
+/*----- ENCABEZADO -----*/
+/*
+ * Descripción: Estilos para la cabezera
+ * Estructura:
+ *      - header
+ *      - header__figure
+ *      - header__figure--img
+ *      - header__h2
+ *      - header__h2--line
+ *      - header__h1
+ *      - header__btn
+ *      - header__nav
+ *      - header__ul
+ *      - header__li
+ *
+ */
+
+.header{
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header__figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__figure--img{
+    width: 100%;
+}
+
+.header__h2{
+    color: var(--color-logo-2);
+    text-align: center;
+}
+
+.header__h2--line::before{
+    background-color: var(--color-logo-1);
+    content: "";
+    height: 0.25rem;
+    width: 11rem;
+    position: absolute;
+}
+
+.header__h1{
+    visibility: hidden;
+    font-size: var(--h-1);
+}
+
+.header__btn{
+    font-size: 3rem;
+    color: var(--color-logo-2);
+    border: none;
+    background: none;
+    margin-right: 2rem;
+}
+
+.header__nav {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    z-index: 1;
+}
+
+/* isActive: Esta clase hace visible el navegador con JS al hacer click sobre el buton hamburguesa */
+.header__nav.isActive{
+    visibility: visible;
+}
+
+.header__ul{
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-logo-1);
+    padding: 1rem;
+    text-align: center;
+    right: 3.5rem;
+    border-radius: .5rem;
+    z-index: 1;
+}
+
+.header__li {
+    padding: .5rem;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: bold;
+    list-style-type: none;
+    border-bottom: solid 1px var(--color-section-1);
+    text-align: center;
+}
+
+.header__li a{
+    text-decoration: none;
+    color: var(--color-body);
+}
+
+/* hover: Al colocarnos sobre la cada una de las lineas de la lista cambiara de color */
+.header__li:hover{
+    background-color: var(--color-section-1);
+    border-radius: 2rem;
+}
+
+/*----- FINAL - HEADER -----*/
+
+/*----- SECCION INTERES -----*/
+/*
+ * Descripción: Estilos para la seccion de interes
+ * Estructura:
+ *      - section__interest
+ *      - article__interest
+ *      - article__interest--figure
+ *      - article__p
+ *      - article__figcaption
+ *      - article__figcaption--p
+ *      - article__figcaption--a
+ *
+ */
+
+.section__interest{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-section-1);
+}
+
+.article__interest{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.article__interest--figure{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.article__interest--figure p{
+    font-size: var(--paragraph-1);
+}
+
+/* after: El posicionamiento de los textos de las transciones antes de activarlos con el hover */
+.article__interest--figure::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    border: 5px solid var(--color-section-2);
+    opacity: 0.7;
+    transition: opacity 0.35s, transform 0.75s;
+    transform: scale(0,1);
+}
+
+/* hover: El posicionamiento de los textos de las transciones cuando nos situamos encima */
+.article__interest--figure:hover::after{
+    background-color: var(--color-logo-1);
+    transform: scale(0.8);
+}
+
+.article__p{
+    font-size: var(--paragraph-1);
+    margin: 2rem;
+    text-align: justify;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.article__figcaption{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.article__figcaption--p{
+    font-size: var(--paragraph-1);
+    transform: translate3d(5rem, 0, 0);
+    opacity: 0;
+}
+
+/* hover: El posicionamiento del parrafo al colocarnos sobre el */
+.article__interest--figure:hover .article__figcaption--p{
+    opacity: 1;
+    transform: translate3d(var(--scale-p), 3rem, 0);
+    transition: opacity 0.2s, transform 0.75s;
+    color: var(--color-body);
+}
+
+.article__figcaption--a{
+    color: var(--color-section-1);
+    display: block;
+    position: relative;
+    transition: tranform .5s ease-in-out;
+    text-decoration: none;
+    font-size: var(--paragraph-1);
+    transform: translate3d(0, 10rem, 0);
+    visibility: hidden;
+}
+
+/* hover: El posicionamiento del enlace al colocarnos sobre el */
+.article__interest--figure:hover .article__figcaption--a{
+    transform: translate3d(var(--scale-p), 8rem, 0);
+    transition: opacity 0.2s, transform 0.75s;
+    visibility: visible;
+}
+
+/* before: Simbolo de flecha situad odelante de enlace */
+.article__figcaption--a::before{
+    content: '→';
+    color: var(--color-section-1);
+    height: 2rem;
+    left: -2rem;
+    opacity: 0;
+    position: absolute;
+    transition: opacity .2s ease-in-out;
+    width: 2rem;
+}
+
+/* hover: El simbolo anterior se hace visible al colocarnos encima */
+.article__figcaption--a:hover::before{
+    opacity: 1;
+}
+
+/*----- FINAL - SECCION INTERES -----*/
+
+/*----- SECCION PRODUCTOS -----*/
+/*
+ * Descripción: Estilos para la seccion de nuestros productos
+ * Estructura:
+ *      - section_products
+ *      - slider__container
+ *      - slider__imagenes
+ *      - slider__tablas
+ *      - slider__img
+ *      - slider__tb
+ *      - slider__productos
+ *      - slider__h2
+ *      - table, table td, table th
+ *      - thead
+ *      - tfoot
+ *      - slider__btn
+ *
+ */
+
+.section_products{
+    display: block;
+    text-align: center;
+}
+
+.slider__container{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 3rem
+}
+
+.slider__imagenes{
+    width: 80%;
+    position: relative;
+}
+
+.slider__tablas{
+    width: 80%;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.slider__img{
+    top: 2rem;
+    width: 50%;
+    position: absolute;
+    left: 10rem;
+    margin: auto;
+    opacity:0;
+}
+
+.slider__img.isVisible{
+    opacity: 1;
+}
+
+.slider__img:first-child{
+    width: 50%;
+    position: relative;
+    left: 1rem;
+}
+
+.slider__tb{
+    width: 80%;
+    opacity: 0;
+    position: absolute;
+    top: 2rem;
+    transition: all .5s ease;
+    font-size: var(--paragraph-1);
+}
+
+.slider__tb.isVisible{
+    opacity: 1;
+}
+
+.slider__tb:first-child{
+    position: relative;
+    width: 80%;
+}
+
+.slider__productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider__h2{
+    position: absolute;
+    visibility: hidden;
+    font-size: var(--h-2);
+    margin-top: 2rem;
+}
+
+/* isVisible: El titulo de la tableta se hace visiblecon esta clase desde JS */
+.slider__h2.isVisible{
+    visibility: visible;
+}
+
+.slider__h2:first-child{
+    position: relative;
+}
+
+.slider__ul{
+    width: 100%;
+    bottom: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    list-style-type: none;
+}
+
+table, table td, table th{
+    border: solid 3px var(--color-logo-1);
+    border-radius: 0.2rem;
+    margin: 1rem;
+    text-align: center;
+    padding: 0.5rem;
+    color: var(--color-logo-2);
+    font-size: var(--nav-footer);
+}
+
+thead{
+    background-color: var(--color-section-1);
+}
+
+tfoot{
+    background-color: var(--color-section-2);
+}
+
+.slider__btn{
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    color: var(--color-logo-2);
+    background-color: var(--color-section-3);
+    border: 2px solid var(--color-logo-2);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 3.8rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* isActive: El boton toma esta clase cuando se activa y se cmabia de slider desde JS */
+.slider__btn.isActive{
+    background-color: var(--color-section-2);
+}
+/*----- FINAL - SECCION PRODUCTOS -----*/
+
+
+/*----- SECCION TABLETA -----*/
+/*
+ * Descripción: Estilos para la seccion de nuestros productos
+ * Estructura:
+ *      - section_tablet
+ *      - section_tablet--h2
+ *      - container__tablet
+ *      - container__list
+ *      - container__list--h3
+ *      - container__list--select
+ *      - show__tablet
+ *      - button__tablet
+ *      - tablet__cacao
+ *      - tablet__fruits
+ *      - tablet__nuts
+ *      - present
+ */
+.section__tablet{
+    background-image: url(../img/section_productos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section__tablet--h2{
+    padding: 2rem;
+    display: inline;
+    font-size: var(--h-2);
+}
+
+.container__tablet{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.container__list{
+    position: relative;
+    box-shadow: 1rem 1rem 1rem 1rem rgba(116, 99, 89, 0.5) inset;
+    text-align: center;
+    padding: 3rem;
+}
+
+.container__list--h3{
+    font-size: var(--paragraph-1)
+}
+
+.container__list--select{
+    background-color: var(--color-section-1);
+    border-radius: 1.8rem;
+    color: var(--color-logo-2);
+    padding: .8rem;
+    font-size: 1rem;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.show__tablet{
+    top: 7rem;
+    left: var(--left-tablet);
+    display: block;
+    position: relative;
+    padding-bottom: 15rem;
+    text-align: center;
+}
+
+.button__tablet{
+    margin-top: 4rem;
+    color: var(--color-body);
+    background-color: var(--color-section-1);
+    border: none;
+    width: 9rem;
+    font-size: var(--paragraph-1);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+/* hover: Cuando nos colocamos sobre el boton se hace mas grande y con borde */
+.button__tablet:hover{
+    border: .2rem solid var(--color-logo-2);
+    transform: scale(1.2);
+}
+
+.tablet__cacao{
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    visibility: hidden;
+
+}
+
+/* isVisibleTablet: Hace visible la imagen de la tableta de cacao */
+.tablet__cacao.isVisible{
+    visibility: visible;
+    animation: rotar 2s linear normal;
+}
+
+.tablet__fruits{
+    position: absolute;
+    top: 4rem;
+    z-index: 1;
+    visibility: hidden;
+}
+
+/* isVisibleFruta: Hace visible la imagen de la tableta de frutas */
+.tablet__fruits.isVisible{
+    visibility: visible;
+    animation: rotar 2s linear normal;
+}
+
+.tablet__nuts{
+    position: absolute;
+    top: 8rem;
+    z-index: 0;
+    visibility: hidden;
+}
+
+/* isVisibleSecos: Hace visible la imagen de la tabletade frutos secos */
+.tablet__nuts.isVisible{
+    visibility: visible;
+    animation: rotar 2s linear normal;
+}
+
+/* Animacion para rotar las imagenes de las tabletas */
+@keyframes rotar {
+    from{
+        transform: rotateY(360deg);
+    }
+    to{
+        transform: rotateY(0deg);
+    }
+
+}
+
+.present__img{
+    visibility: hidden;
+}
+
+/* isVisible: Hace visible la imagen del regalo */
+.present__img.isVisible{
+    visibility: visible;
+    animation: spinner 0.3s ease-out;
+}
+
+/* Animacion para rotar la imagen del regalo */
+@keyframes spinner{
+	0%{
+		transform: rotate(0deg);
+		opacity: 0;
+	}
+
+	100%{
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+}
+
+/*----- FINAL - SECCION TABLETA -----*/
+
+/*----- SECCION CONTACTA -----*/
+/*
+ * Descripción: Estilos para la seccion conctacta con nosotros
+ * Estructura:
+ *      - section__contact
+ *      - first__contact
+ *      - first__contact--div
+ *      - contact__h2
+ *      - contact__picture
+ *      - contact__p
+ *      - second__contact
+ *      - contact__form
+ *      - contact__form inputs
+ *      - btn__reset
+ *      - contact__policy
+ *      - contact__policy--p
+ *      - btn__sent
+ */
+
+.section__contact{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.first__contact{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.first__contact--div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact__h2{
+    font-size: var(--h-3);
+    margin-left: .5rem;
+    color: var(--color-logo-2);
+}
+
+/* hover: Al colocarnos sobre el h2 cambiarade color */
+.contact__h2:hover{
+    transition: color 0.2s ease-in-out;
+    color: var(--color-section-1);
+    cursor: pointer;
+}
+
+.contact__picture{
+    width: 10%;
+}
+
+.contact__picture img{
+    transition: 0.5s;
+    object-fit: scale-down;
+}
+
+.contact__picture img:hover{
+    transform: scale(1.5); 
+    cursor: zoom-in;
+}
+
+.contact__p{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: var(--color-logo-2);
+    font-size: var(--h-2);
+    margin-left: .5rem;
+    margin-bottom: 4rem;
+}
+
+.second__contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    color: var(--color-logo-2);
+    width: auto;
+}
+
+.contact__form input:not(input[type="submit"]){
+    border: solid 2px var(--color-section-2);
+    background-color: var(--color-body);
+    border-radius: 10rem;
+    margin-top: 0.625rem;
+    padding: .9rem;
+    font-size: .9rem;
+}
+
+.contact__form input[type="reset"]{
+    position: relative;
+    left: 1rem;
+    color: var(--color-section-2);
+    line-height: 0.0625rem;
+    border: none;
+    font-size: 3rem;
+}
+
+.contact__form input[type="reset"]:hover{
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.contact__form input[type="submit"]{
+    background-color: var(--color-section-2);
+    font-size: 1.2rem;
+    margin-left: 8rem;
+    border-radius: 10rem;
+}
+
+input::placeholder{
+    font-size: 1.2rem;
+}
+
+.contact__form textarea{
+    font-family: var(--font-gothic);
+    border: solid 2px var(--color-section-2);
+    background-color: var(--color-body);
+    margin-top: 0.625rem;
+    padding: 0.9rem;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    max-width: 32rem;
+    max-height: 8rem;
+}
+
+.btn__reset{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+
+}
+
+.contact__policy{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contact__policy--p{
+    margin-bottom: 0.6rem;
+    margin-left: 2rem;
+}
+
+.btn__sent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--color-body);
+    background-color: var(--color-section-2);
+    border: none;
+    font-size: 1rem;
+    width: 9rem;
+    margin-left: 65%;
+    margin-top: 1.25rem;
+}
+
+/* hover: Cuando nos colocamos sobre el boton "Envair" este se escala y tiene borde */
+.btn__sent:hover{
+    border: .2rem solid var(--color-logo-2);
+    transform: scale(1.5);
+}
+
+/*----- FINAL - SECCION CONTACTA -----*/
+
+/*----- SECCION DONDE  -----*/
+
+.section__where--iframe{
+    width: 100%;
+    min-height: 20rem;
+    max-height: 28rem;
+}
+
+/*----- FINAL - SECCION DONDE -----*/
+
+/*----- PIE DE PAGINA -----*/
+/*
+ * Descripción: Estilos para el pie de pagina
+ * Estructura:
+ *      - footer
+ *      - footer__img
+ *      - footer__container
+ *      - footer__btn
+ *      - footer__ul
+ *      - footer__li
+ *      - footer__li--a
+ *      - footer__li span
+ *      - footer__p
+ */
+
+
+.footer{
+    font-size: var(--paragraph-1);
+    background: linear-gradient(45deg, var(--color-section-1) 10%, var(--color-section-2) 34% 67%, var(--color-section-3) 80%);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__img{
+    width: 100%;
+}
+
+.footer__container{
+    width: calc(100% - 2rem);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.footer__btn{
+    padding: 0;
+    outline: none;
+    border: 0;
+    background-color: var(--color-section-3);
+    display: none;
+    font-size: 1rem;
+
+}
+
+.footer__ul{
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
+
+.footer__li{
+    list-style-type: none;
+}
+
+.footer__li--a{
+    text-decoration: none;
+    color: var(--color-body);
+    font-size: var(--nav-footer)
+}
+
+.footer__li span{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: .3rem;
+}
+
+.footer__p{
+    font-size: var(--p-footer);
+    display: flex;
+    justify-content: end;
+    margin-right: 10rem;
+    font-weight: 600;
+}
+
+
+/*----- FINAL - SECCION CONTACTA -----*/
+
+/*
+
+**     MEDIA QUERY
+       MOVIL
+**
+
+*/
+
+@media (max-width: 600px) {
+
+
+    /*----- ENCABEZADO -----*/
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header__h2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__h1{
+        visibility: visible;
+        font-size: var(--h-1);
+        color: var(--color-logo-1);
+    }
+
+    .header__btn{
+        margin-right: 0;
+    }
+
+    .header__ul{
+        right: 0;
+    } 
+
+
+    /*----- SECCION INTERES -----*/
+
+    .section__interest{
+        width: 90%;
+        padding-top: 1.5rem;
+    }
+
+    .article__interest{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .article__p{
+        width: 80%;
+    }
+
+    #section__milk p{
+        order: 1;
+    }
+
+
+    /*----- SECCION PRODUCTOS -----*/
+
+    .slider__container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slider__img{
+        width: 80%;
+        left: 4rem;
+    }
+
+    .slider__img:first-child{
+        width: 80%;
+    }
+
+    .slider__tb:first-child{
+        width: 80%;
+    }
+
+    .slider__tb{
+        width: 80%;
+        left: 4rem;
+        top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    /*----- SECCION TABLETA -----*/
+
+    .container__tablet{
+        flex-direction: column;
+    }
+
+    .show__tablet{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 1rem;
+    }
+
+    .container__list{
+        margin-left: 2rem;
+    }
+
+
+    /* SECCION CONTACTO */
+
+    .contact__picture{
+        width: 8%;
+    }
+
+    .btn__sent{
+        position: relative;
+        left: 0;
+    }
+
+    /*----- PIE DE PAGINA -----*/
+
+    .footer{
+        align-items: center;
+    }
+
+    .footer__container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer__btn{
+        display: block;
+        background: none;
+        font-size: 1.5rem;
+    }
+
+    .footer__nav{
+        width: 100%;
+        display: none;
+    }
+
+    .footer__nav.isActive{
+        display: block;
+        box-shadow: inset 0 0 205.8vmax rgba(0, 0, 0, 0.5);
+    }
+
+    .footer__ul{
+        flex-direction: column;
+        margin: 2rem;
+        margin-left: 0;
+    }
+
+    .footer__p{
+        padding-top: 1rem;
+        margin: 0;
+    }
+
+    .footer__li span{
+        padding-left: .1rem;
+    }
+
+}
+
+
+/*
+
+**     MEDIA QUERY
+       TABLET
+**
+
+*/
+@media (min-width: 600px) and (max-width: 768px) {
+
+    /*----- ENCABEZADO -----*/
+
+    .header__btn{
+        box-shadow: inset 0 0 205.8vmax rgba(54, 42, 40, 0.5);
+        border-radius: 1rem;
+    }
+
+    /*----- SECCION INTERES -----*/
+
+    .section__interest{
+        width: 90%;
+        margin-bottom: 4rem;
+        padding-top: 1.5rem;
+    }
+
+    .article__interest{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .article__p{
+        width: 80%;
+    }
+
+    #section__milk p{
+        order: 1;
+    }
+
+     /* hover: El posicionamiento del parrafo al colocarnos sobre el */
+    .article__interest--figure:hover .article__figcaption--p{
+        opacity: 1;
+        transform: translate3d(8.5rem, 5rem, 0);
+        transition: opacity 0.2s, transform 0.75s;
+        color: var(--color-body);
+    }
+
+    /* hover: El posicionamiento del enlace al colocarnos sobre el */
+    .article__interest--figure:hover .article__figcaption--a{
+        transform: translate3d(8.5rem, 12rem, 0);
+        transition: opacity 0.2s, transform 0.75s;
+        visibility: visible;
+    }
+
+
+    /*----- SECCION PRODUCTOS -----*/
+
+    .slider__container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slider__img{
+        width: 60%;
+        top: 0;
+        left: 10rem;
+    }
+
+    .slider__img:first-child{
+        width: 60%;
+        left: 4rem;
+    }
+
+    .slider__tb{
+        width: 60%;
+        right: 2rem;
+        top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .slider__tb:first-child{
+        width: 60%;
+        left: 10.5rem;
+        top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+
+    /*----- SECCION TABLETA -----*/
+
+    .container__tablet{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .show__tablet{
+        left: 0;
+    }
+
+
+    /*----- PIE DE PAGINA -----*/
+
+    .footer{
+        align-items: center;
+    }
+
+    .footer__container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer__btn{
+        display: block;
+        background: none;
+        font-size: 1.5rem;
+    }
+
+    .footer__nav{
+        width: 100%;
+        display: none;
+    }
+
+    .footer__nav.isActive{
+        display: block;
+        box-shadow: inset 0 0 205.8vmax rgba(54, 42, 40, 0.5);
+    }
+
+    .footer__ul {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer__p{
+        padding-top: 1rem;
+        margin: 0;
+    }
+
+    .footer__li span{
+        padding-left: .1rem;
+    }
+
+}

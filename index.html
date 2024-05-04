@@ -1,0 +1,740 @@
+<!-- 
+    Descripción: Este archivo HTML contiene la página principal de "La Chocolaterie"
+    Estructura general:
+        - Encabezado + Barra de navegación
+        - Contenido principal
+        - Pie de página
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La chocolaterie</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+
+    <!-- 
+        Encabezado
+        Estructura general:
+            - Logo de la empresa 
+            - h1
+            - Navegador
+    -->
+    <header class="header">
+        <!-- Logo de la empresa -->
+        <figure class="header__figure">
+            <img loading="lazy" class="header__figure--img" src="img/logo_header.png" alt="Logo" title="La chocolaterie">
+            <h2 class="header__h2 header__h2--line poetsen-one-regular"><span>La</span>
+                <span>Chocolaterie</span>
+            </h2>
+        </figure>
+ 
+        <!-- h1 - Frase sobre la página -->
+        <h1 class="header__h1 poetsen-one-bold">Todo el sabor en una onza</h1>
+
+        <!-- Navegador de la página-->
+        <div class="header__div">
+            <!-- Boton que activa la visualización del navegador -->
+            <button class="header__btn">&#9776;</button>
+            <nav class="header__nav">
+                <ul class="header__ul">
+                    <li class="header__li"><a class="nunito-normal" href="#section__cacao">Nuestro cacao</a></li>
+                    <li class="header__li"><a class="nunito-normal" href="#section__milk">Nuestra leche</a></li>
+                    <li class="header__li"><a class="nunito-normal" href="#section__sugar">Nuestro ázucar</a></li>
+                    <li class="header__li"><a class="nunito-normal" href="#products">Productos</a></li>
+                    <li class="header__li"><a class="nunito-normal" href="#tablet">Crea tu tableta</a></li>
+                    <li class="header__li"><a class="nunito-normal" href="#contact">Conocenos</a></li>
+                    <li class="header__li"><a class="nunito-normal" href="#where">Donde estamos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main">
+
+
+        <!-- 
+            Sección de interes
+            Descripción: Explicamos losproductos que utilizamos para crear nuestras tabeltas y su origen
+            Estructura general:
+                - Articulo x3
+                    - Figure, donde se localiza la imagen:
+                        ~ Imagen
+                        ~ Figcaption: Donde localizamos los textos de las transiciones
+                    - Parrafo con la descripción
+        -->
+
+        <section class="section__interest">
+
+            <article class="article__interest" id="section__cacao">
+                <figure class="article__interest--figure">
+                    <img loading="lazy" src="img/cacao.jpg" alt="Señor recogiendo cacao" title="El cacao">
+                    <figcaption class="article__figcaption">
+                        <p class="article__figcaption--p poetsen-one-regular">Desde Madagascar</p>
+                        <a href="#" class="article__figcaption--a nunito-normal">Conoce más</a>
+                    </figcaption>
+                </figure>
+                <p class="article__p nunito-normal"><span>Nuestro cacao tiene un puesto reservado entre los grandes orígenes del mundo. Lo exportamos  directamente desde <em>Madagascar</em>,  particularmente de la zona noroeste.
+                </span>
+                <span>Donde una de las principales caracteisticas de este cacao es su intenso sabor a fruta roja. Un pequeño gran placer para tu paladar.</span>
+                </p>
+            </article>
+
+            <article class="article__interest" id="section__milk">
+                <p class="article__p nunito-normal"><span>El clima, la protección de las altas montañas, el régimen de lluvias, la humedad, las frescas temperaturas de media y la protección oficial convierten a <em>Asturias</em> en el mejor lugar para que pasten nuestras vacas y que nos puedan proporcionar nuestra mejor leche</span><span>Elaboramos productos sin aditivos artificiales, con ingredientes 100% naturales y etiquetas claras que mejoran la calidad de vida de las personas.</span></p>
+                <figure class="article__interest--figure">
+                    <img loading="lazy" src="img/vaca.jpg" alt="Vaca" title="Vaca de leche">
+                    <figcaption class="article__figcaption">
+                        <p class="article__figcaption--p poetsen-one-regular">Desde Asturias</p>
+                        <a href="#" class="article__figcaption--a nunito-normal">Conoce más</a>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="article__interest" id="section__sugar">
+                <figure class="article__interest--figure">
+                    <img  loading="lazy" src="img/azucar.jpg" alt="Bol lleno de azucar" title="El azucar">
+                    <figcaption class="article__figcaption">
+                        <p class="article__figcaption--p poetsen-one-regular">Desde Veracruz</p>
+                        <a href="#" class="article__figcaption--a nunito-normal">Conoce más</a>
+                    </figcaption>
+                </figure>
+                <p class="article__p nunito-normal"><span>La caña de azúcar, como su nombre lo dice, es utilizada para la comercialización de azúcar. Exportamos nuestro ázucar desde <em>Veracruz</em> ya que tiene un rol importante en este mercado azucarero,ya que es uno de los mejores paises que proporciona este produzco.</span><span>Para crear nuestras tabletas solo podemos rodearnos de los mejores productos.</span></p>
+            </article>
+        </section>
+
+        <!-- 
+            Sección de productos
+            Descripción: En esta seccion los usuarios pueden ver los productos que tenemos disponibles a traves de sliders
+            Estructura general:
+                - h2 x9: Nombre descriptivo de cada tableta 
+                - Contenedor Slider: Aqui se ven las imagenes de las tabletas y su tabla 
+                    - img x9
+                    - table x9
+                - Lista con los botones para que funcione el slider
+        -->
+
+        <section class="section_products" id="products">
+
+            <div class="slider__productos">
+                <h2 class="slider__h2 poetsen-one-bold isVisible">Chocolate blanco con arandanos y almendras</h2>
+                <h2 class="slider__h2 poetsen-one-bold">Chocolate con leche y frambuesas</h2>
+                <h2 class="slider__h2 poetsen-one-bold">Chocolate negro con naranja y nueces</h2>
+                <h2 class="slider__h2 poetsen-one-bold">Chocolate blanco con limón</h2>
+                <h2 class="slider__h2 poetsen-one-bold">Chocolate con leche y naranja</h2>
+                <h2 class="slider__h2 poetsen-one-bold">Chocolate negro con arandanos</h2>
+                <h2 class="slider__h2 poetsen-one-bold">Chocolate blanco con frambuesas</h2>
+                <h2 class="slider__h2 poetsen-one-bold">Chocolate con leche y limón</h2>
+                <h2 class="slider__h2 poetsen-one-bold">Chocolate negro con frambuesas</h2>
+            </div>
+                 
+            <div class="slider__container">
+                <div class="slider__imagenes">
+                    <img loading="lazy" title="Tableta 0" src="img/productos/arandanos.png" alt="Tableta 0" class="slider__img isVisible">
+                    <img loading="lazy" title="Tableta 1" src="img/productos/leche_frambuesa.png" alt="Tableta 1" class="slider__img">
+                    <img loading="lazy" title="Tableta 2" src="img/productos/negro_naranja.png" alt="Tableta 2" class="slider__img">
+                    <img loading="lazy" title="Tableta 3" src="img/productos/limon.png" alt="Tableta 4" class="slider__img">
+                    <img loading="lazy" title="Tableta 4" src="img/productos/leche_naranja.png" alt="Tableta 5" class="slider__img">
+                    <img loading="lazy" title="Tableta 5" src="img/productos/negro_arandanos.png" alt="Tableta 6" class="slider__img">
+                    <img loading="lazy" title="Tableta 6" src="img/productos/frambuegas.png" alt="Tableta 7" class="slider__img">
+                    <img loading="lazy" title="Tableta 7" src="img/productos/leche_limon.png" alt="Tableta 8" class="slider__img">
+                    <img loading="lazy" title="Tableta 8" src="img/productos/negro_frambuesa.png" alt="Tableta 9" class="slider__img">
+                </div>
+
+                <div class="slider__tablas">
+                    <!-- 1 Tabla de ingredientes - Blanco con arandanos -->
+                    <table class="slider__tb isVisible">
+                        <thead>
+                            <th colspan="3">
+                                Ingredientes
+                            </th>
+                            <th>
+                                Gramos
+                            </th>
+                        </thead>
+                        <tr>
+                            <td colspan="3">Ázucar moreno</td>
+                            <td>23 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Manteca de cacao</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Arandanos</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Almendras</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Cacao</td>
+                            <td>49 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td>119 <sub>g</sub></td>
+                        </tr>
+                    
+                        <tfoot>
+                        
+                            <th colspan="4">Un pequeño placer</th>
+                        </tfoot>
+                    </table>
+
+                    <!-- 2 tabla de ingredientes - Leche con frambuesa -->
+                    <table class="slider__tb">
+                        <thead>
+                            <th colspan="3">
+                                Ingredientes
+                            </th>
+                            <th>
+                                Gramos
+                            </th>
+                        </thead>
+                        <tr>
+                            <td colspan="3">Ázucar moreno</td>
+                            <td>23 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Manteca de cacao</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Leche</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Frambuesas</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Cacao</td>
+                            <td>49 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td>119 <sub>g</sub></td>
+                        </tr>
+                    
+                        <tfoot>
+                        
+                            <th colspan="4">Un pequeño placer</th>
+                        </tfoot>
+                    </table>
+
+                    <!-- 3 tabla de ingredientes - Negro con naranja -->
+                    <table class="slider__tb">
+                        <thead>
+                            <th colspan="3">
+                                Ingredientes
+                            </th>
+                            <th>
+                                Gramos
+                            </th>
+                        </thead>
+                        <tr>
+                            <td colspan="3">Ázucar moreno</td>
+                            <td>23 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Manteca de cacao</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Naranja</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Nueces</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Cacao</td>
+                            <td>49 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td>119 <sub>g</sub></td>
+                        </tr>
+                    
+                        <tfoot>
+                        
+                            <th colspan="4">Un pequeño placer</th>
+                        </tfoot>
+                    </table>
+
+                    <!-- 4 tabla de ingredientes - Blanco con limon -->
+                    <table class="slider__tb">
+                        <thead>
+                            <th colspan="3">
+                                Ingredientes
+                            </th>
+                            <th>
+                                Gramos
+                            </th>
+                        </thead>
+                        <tr>
+                            <td colspan="3">Ázucar moreno</td>
+                            <td>23 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Manteca de cacao</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Leche</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Limon</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Cacao</td>
+                            <td>49 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td>119 <sub>g</sub></td>
+                        </tr>
+                    
+                        <tfoot>
+                        
+                            <th colspan="4">Un pequeño placer</th>
+                        </tfoot>
+                    </table>
+
+                    <!-- 5 tabla de ingredientes - Leche con naranja -->
+                    <table class="slider__tb">
+                        <thead>
+                            <th colspan="3">
+                                Ingredientes
+                            </th>
+                            <th>
+                                Gramos
+                            </th>
+                        </thead>
+                        <tr>
+                            <td colspan="3">Ázucar moreno</td>
+                            <td>23 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Manteca de cacao</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Leche</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Naranja</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Cacao</td>
+                            <td>49 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td>119 <sub>g</sub></td>
+                        </tr>
+                    
+                        <tfoot>
+                            <th colspan="4">Un pequeño placer</th>
+                        </tfoot>
+                    </table>
+
+                    <!-- 6 tabla de ingredientes - Negro con arandanos -->
+                    <table class="slider__tb">
+                        <thead>
+                            <th colspan="3">
+                                Ingredientes
+                            </th>
+                            <th>
+                                Gramos
+                            </th>
+                        </thead>
+                        <tr>
+                            <td colspan="3">Ázucar moreno</td>
+                            <td>23 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Manteca de cacao</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Arandanos</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Avellanas</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Cacao</td>
+                            <td>49 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td>119 <sub>g</sub></td>
+                        </tr>
+                    
+                        <tfoot>
+                        
+                            <th colspan="4">Un pequeño placer</th>
+                        </tfoot>
+                    </table>
+
+                    <!-- 7 tabla de ingredientes - Blanco con frambuesas -->
+                    <table class="slider__tb">
+                        <thead>
+                            <th colspan="3">
+                                Ingredientes
+                            </th>
+                            <th>
+                                Gramos
+                            </th>
+                        </thead>
+                        <tr>
+                            <td colspan="3">Ázucar moreno</td>
+                            <td>23 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Manteca de cacao</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Frambuesas</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Leche</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Cacao</td>
+                            <td>49 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td>119 <sub>g</sub></td>
+                        </tr>
+                    
+                        <tfoot>
+                        
+                            <th colspan="4">Un pequeño placer</th>
+                        </tfoot>
+                    </table>
+
+                    <!-- 8 tabla de ingredientes - Leche con limon -->
+                    <table class="slider__tb">
+                        <thead>
+                            <th colspan="3">
+                                Ingredientes
+                            </th>
+                            <th>
+                                Gramos
+                            </th>
+                        </thead>
+                        <tr>
+                            <td colspan="3">Ázucar moreno</td>
+                            <td>23 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Manteca de cacao</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Leche</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Limón</td>
+                            <td>10 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Cacao</td>
+                            <td>49 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td>119 <sub>g</sub></td>
+                        </tr>
+                    
+                        <tfoot>
+                        
+                            <th colspan="4">Un pequeño placer</th>
+                        </tfoot>
+                    </table>
+
+                    <!-- 9 tabla de ingredientes - Negro con frambuesa -->
+                    <table class="slider__tb">
+                        <thead>
+                            <th colspan="3">
+                                Ingredientes
+                            </th>
+                            <th>
+                                Gramos
+                            </th>
+                        </thead>
+                        <tr>
+                            <td colspan="3">Ázucar moreno</td>
+                            <td>23 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Manteca de cacao</td>
+                            <td>30 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Frambuesas</td>
+                            <td>20 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Cacao</td>
+                            <td>49 <sub>g</sub></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td>119 <sub>g</sub></td>
+                        </tr>
+                    
+                        <tfoot>
+                        
+                            <th colspan="4">Un pequeño placer</th>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+
+            <ul class="slider__ul">
+                <li class="slider__li">
+                    <button class="slider__btn isActive">&#8226;</button>
+                </li>
+                <li class="slider__li">
+                    <button class="slider__btn">&#8226;</button>
+                </li>
+                <li class="slider__li">
+                    <button class="slider__btn">&#8226;</button>
+                </li>
+                <li class="slider__li">
+                    <button class="slider__btn">&#8226;</button>
+                </li>
+                <li class="slider__li">
+                    <button class="slider__btn">&#8226;</button>
+                </li>
+                <li class="slider__li">
+                    <button class="slider__btn">&#8226;</button>
+                </li>
+                <li class="slider__li">
+                    <button class="slider__btn">&#8226;</button>
+                </li>
+                <li class="slider__li">
+                    <button class="slider__btn">&#8226;</button>
+                </li>
+                <li class="slider__li">
+                    <button class="slider__btn">&#8226;</button>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- 
+            Sección de tableta
+            Descripción: Le damos a los usuarios la oportunidad de crear su propia tableta de regalo
+            Estructura general:
+                - h2
+                - Contenedor de la tableta
+                    ~ Tres listas para seleccionar, cacao, futas y frutos secos
+                        - h3
+                        - select con los options
+                    ~ Mostrar tableta: con imagenes que van saliendo cuando selecionas los ingredientes
+                        - Boton para que se cree la tableta de regalo
+        -->
+
+        <section class="section__tablet" id="tablet">
+            <h2 class="section__tablet--h2 poetsen-one-bold">
+                <span>Crea tu propia</span>
+                <span>tableta de regalo</span></h2>
+
+            <div class="container__tablet">
+                <div class="container__list">
+
+                    <h3 class="container__list--h3 nunito-extrabold">Elige el cacao que prefieres</h3>
+                    <select class="container__list--select cacao_select" name="cacao_select">
+                        <option value="negro">Negro</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="con leche">Con leche</option>
+                    </select>
+
+                    <h3 class="container__list--h3 nunito-extrabold">Ahora la fruta que mas te guste</h3>
+                    <select class="container__list--select fruits_select" name="fruits_select">
+                        <option value="naranja">Naranja</option>
+                        <option value="limon">Limón</option>
+                        <option value="arandanos">Arandanos</option>
+                        <option value="frambuesas">Frambuesas</option>
+                    </select>
+
+                    <h3 class="container__list--h3 nunito-extrabold">Y por último, nos apetecen frutos secos?</h3>
+                    <select class="container__list--select nuts_select" name="nuts_select">
+                        <option value="avellanas">Avellanas</option>
+                        <option value="nueces">Nueces</option>
+                        <option value="almendras">Almendras</option>
+                    </select>
+                </div>
+
+                <div class="show__tablet">
+                    <!-- Imagen del regalo -->
+                    <figure class="present__img">
+                        <img loading="lazy" src="img/regalo.png" alt="Tableta regalo" title="Tableta regalo">
+                    </figure>
+                    <!-- Imagen de tableta negro -->
+                    <figure class="tablet__cacao isVisible">
+                        <img loading="lazy" src="img/negro.png" alt="Tableta negro" title="Tableta negro">
+                    </figure>
+                    <!-- Imagen de tableta blanco -->
+                    <figure class="tablet__cacao">
+                        <img loading="lazy" src="img/blanco.png" alt="Tableta blanco" title="Tableta blanco">
+                    </figure>
+                    <!-- Imagen de tableta con leche -->
+                    <figure class="tablet__cacao">
+                        <img loading="lazy" src="img/conleche.png" alt="Tableta con leche" title="Tableta con leche">
+                    </figure>
+
+                    <!-- Imagen de tableta con naranja -->
+                    <figure class="tablet__fruits isVisible">
+                        <img loading="lazy" src="img/fondo_naranjas.png" alt="Naranjas" title="Naranjas">
+                    </figure>
+                    <!-- Imagen de tableta con limones -->
+                    <figure class="tablet__fruits">
+                        <img loading="lazy" src="img/fondo_limones.png" alt="Limones" title="Limones">
+                    </figure>
+                    <!-- Imagen de tableta con arandanos -->
+                    <figure class="tablet__fruits">
+                        <img loading="lazy" src="img/fondo_arandanos.png" alt="Arandanos" title="Arandanos">
+                    </figure>
+                    <!-- Imagen de tableta con arandanos -->
+                    <figure class="tablet__fruits">
+                        <img loading="lazy" src="img/fondo_frambuesas.png" alt="Frambuesas" title="Frambuesas">
+                    </figure>
+
+                    <!-- Imagen de tableta con avellanas -->
+                    <figure class="tablet__nuts isVisible">
+                        <img loading="lazy" src="img/fondo_avellanas.png" alt="Avellanas" title="Avellanas">
+                    </figure>
+                    <!-- Imagen de tableta con nueces -->
+                    <figure class="tablet__nuts">
+                        <img loading="lazy" src="img/fondo_nueces.png" alt="Nueces" title="Nueces">
+                    </figure>
+                    <!-- Imagen de tableta con almendras -->
+                    <figure class="tablet__nuts">
+                        <img loading="lazy" src="img/fondo_almendras.png" alt="Almendras" title="Almendras">
+                    </figure>
+    
+                    <button class="button__tablet poetsen-one-regular">LISTA</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 
+            Sección de contacto
+            Descripción: Le proporcionamos al usuario un formulario para sus dudas y que nos manden la tableta que desean de regalo
+            Estructura general:
+                - Primer Contenedor:
+                        - h2
+                        - picture con el simbolo "+" 
+                        - parrafo
+                - Segundo Contenedor:
+                        - formulario
+        -->
+
+        <section class="section__contact" id="contact">
+            <div class="first__contact">
+                <div class="first__contact--div">
+                    <h2 class="contact__h2 poetsen-one-bold">Conocemos</h2>
+                    <picture class="contact__picture">
+                        <img loading="lazy" src="img/suma.png" alt="Mas" title="Simbolo de suma">
+                    </picture>
+                </div>
+                <p class="contact__p nunito-normal">
+                    <span>Escribemos un correo con tus inquietudes</span>
+                    <span>y te enviaremos tu tableta personalizada</span>
+                </p>
+            </div>
+
+            <div class="second__contact">
+                <form id="form" name="form" class="contact__form nunito-normal" action="" method="get">
+
+                    <!-- El atributo "required" aseura que este campo debe de rellenarse antes de enviar el formulario -->
+                    <input type="text" name="result"  id="result" placeholder="Tu tableta">
+                    <input type="text" name="Nombre" id="Nombre" placeholder="Nombre*" required>
+                    <input type="text" name="Apellidos" placeholder="Apellidos*" required>
+                    <input type="email" name="Email" placeholder="Mail*" required>
+                    <input type="text" name="Asunto" placeholder="Asunto*" required>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Texto"></textarea>
+                    <div class="btn__reset">
+                        <p>Los elementos marcados con * son obligatorios</p>
+                        <input type="reset" value='&#8634;'>
+                    </div>
+                    <div class="contact__policy">
+                        <input type="checkbox" name="politics" id="politics" required>
+                        <p class="contact__policy--p">He leido la <u>política de privacidad</u></p>
+                    </div>
+                    <input class="btn__sent poetsen-one-regular" type="submit" value="ENVIAR">
+                </form>
+            </div>
+        </section>
+
+        <!-- 
+            Sección de contacto
+            Descripción: Mapa de donde esta ubicada nuestra tienda fisica
+            Estructura general:
+                - iframe
+        -->
+
+        <section class="section__where" id="where">
+            <iframe class="section__where--iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1226.681986836886!2d-5.2762802445376975!3d43.008643082302605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd37cc51405f207b%3A0xc74092b75859fff8!2s24855%20Puebla%20de%20Lillo%2C%20Le%C3%B3n!5e0!3m2!1ses!2ses!4v1706695247916!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+    </main>
+
+    <!-- 
+        Pie de página
+        Descripción: El pie de página con el logo, un navegador y el aviso legal
+        Estructura general:
+            - Logo pequeño del pie de pagina
+            - Boton para hacer el navegador responsive
+            - Navegador
+            - Parrafo del aviso legal
+    -->
+
+    <footer class="footer">
+        <div class="footer__container">
+            <figure class="footer__figure">
+                <img loading="lazy" class="footer__img" src="img/logo_footer.png" alt="Logo" title="La chocolaterie">
+            </figure>
+            <button class="footer__btn">&#9776;</button>
+            <nav class="footer__nav">
+                <ul class="footer__ul">
+                    <li class="footer__li"><a class="footer__li--a nunito-light" href="#section__cacao"><span>Nuestro<span><span>cacao</span></a></li>
+                    <li class="footer__li"><a class="footer__li--a nunito-light" href="#section__milk"><span>Nuestra<span><span>leche</span></a></li>
+                    <li class="footer__li"><a class="footer__li--a nunito-light" href="#section__sugar"><span>Nuestro<span><span>ázucar</span></a></li>
+                    <li class="footer__li"><a class="footer__li--a nunito-light" href="#products"><span>Productos</span></a></li>
+                    <li class="footer__li"><a class="footer__li--a nunito-light" href="#tablet"><span>Crea tu<span><span>tableta</span></a></li>
+                    <li class="footer__li"><a class="footer__li--a nunito-light" href="#contact">Conocenos</a></li>
+                    <li class="footer__li"><a class="footer__li--a nunito-light" href="#where">Donde estamos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="footer__p nunito-light">Aviso Legal | Política de cookies 2023</p>
+    </footer>
+    </main>
+</body>
+
+</html>
