@@ -673,11 +673,11 @@
 
                     <!-- El atributo "required" aseura que este campo debe de rellenarse antes de enviar el formulario -->
                     <input type="text" name="result"  id="result" placeholder="Tu tableta">
-                    <input type="text" name="Nombre" id="Nombre" placeholder="Nombre*" required>
-                    <input type="text" name="Apellidos" placeholder="Apellidos*" required>
-                    <input type="email" name="Email" placeholder="Mail*" required>
-                    <input type="text" name="Asunto" placeholder="Asunto*" required>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Texto"></textarea>
+                    <input type="text" name="nombre" id="Nombre" placeholder="Nombre*" required>
+                    <input type="text" name="apellidos" placeholder="Apellidos*" required>
+                    <input type="email" id="email"  placeholder="Mail*" autocomplete="off" required>
+                    <input type="text" name="asunto" placeholder="Asunto*" required>
+                    <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Texto"></textarea>
                     <div class="btn__reset">
                         <p>Los elementos marcados con * son obligatorios</p>
                         <input type="reset" value='&#8634;'>
